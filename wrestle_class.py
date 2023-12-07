@@ -47,31 +47,6 @@ class League:
             ]
         return self.matchList
 
-class Match:
-    def __init__(self, leftGuy, rightGuy):
-        self.leftGuy = leftGuy
-        self.rightGuy = rightGuy
-
-    def win(self, winner):
-        winner.points += 3
-        winner.wins += 1
-
-    def lose(self, loser):
-        loser.points += 0
-        loser.losses += 1
-
-    def draw(self):
-        self.leftGuy.points += 1
-        self.rightGuy.points += 1
-        self.leftGuy.draws += 1
-        self.rightGuy.draws += 1
-
-    def __repr__(self):
-        return f"{self.leftGuy} vs. {self.rightGuy}"
-        
-    def __str__(self):
-        return f"{self.leftGuy} vs. {self.rightGuy}"
-
 with open("wrestlers.csv", "r") as wrestlers:
     csvReader = csv.DictReader(wrestlers)
 
