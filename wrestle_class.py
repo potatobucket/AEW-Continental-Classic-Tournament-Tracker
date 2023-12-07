@@ -9,7 +9,7 @@ class Wrestler:
         self.losses = 0
         self.draws = 0
 
-    def tieBreaker(self, *opponents):
+    def tieBreaker(self, opponents = []):
         for opponent in opponents:
             if opponent.name != self.name:
                 self.opponentPoints += opponent.points

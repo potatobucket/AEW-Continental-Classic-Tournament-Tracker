@@ -16,9 +16,6 @@ white = wc.createWrestler(wc.wrestleDictionary["Jay White"])
 blueLeague = wc.League([elIdolo, danielson, kingston, king, castagnoli, garcia])
 goldLeague = wc.League([briscoe, mox, swerve, rush, lethal, white])
 
-blueLeagueMatches = [wc.Match(match[0], match[1]) for match in blueLeague.matches]
-goldLeagueMatches = [wc.Match(match[0], match[1]) for match in goldLeague.matches]
-
 def point_totals():
     print("Blue League:")
     for guy in blueLeague.roster:
