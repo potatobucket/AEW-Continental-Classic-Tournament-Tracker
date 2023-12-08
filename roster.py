@@ -1,17 +1,21 @@
+"""
+Handles generating the wrestlers, leagues and holds the point_totals function.
+"""
+
 import wrestle_class as wc
 
-elIdolo = wc.createWrestler(wc.wrestleDictionary["Andrade el Idolo"])
-danielson = wc.createWrestler(wc.wrestleDictionary["Bryan Danielson"])
-kingston = wc.createWrestler(wc.wrestleDictionary["Eddie Kingston"])
-king = wc.createWrestler(wc.wrestleDictionary["Brody King"])
-castagnoli = wc.createWrestler(wc.wrestleDictionary["Claudio Castagnoli"])
-garcia = wc.createWrestler(wc.wrestleDictionary["Daniel Garcia"])
-briscoe = wc.createWrestler(wc.wrestleDictionary["Mark Briscoe"])
-mox = wc.createWrestler(wc.wrestleDictionary["Jon Moxley"])
-swerve = wc.createWrestler(wc.wrestleDictionary["Swerve Strickland"])
-rush = wc.createWrestler(wc.wrestleDictionary["Rush"])
-lethal = wc.createWrestler(wc.wrestleDictionary["Jay Lethal"])
-white = wc.createWrestler(wc.wrestleDictionary["Jay White"])
+elIdolo = wc.create_wrestler(wc.wrestleDictionary["Andrade el Idolo"])
+danielson = wc.create_wrestler(wc.wrestleDictionary["Bryan Danielson"])
+kingston = wc.create_wrestler(wc.wrestleDictionary["Eddie Kingston"])
+king = wc.create_wrestler(wc.wrestleDictionary["Brody King"])
+castagnoli = wc.create_wrestler(wc.wrestleDictionary["Claudio Castagnoli"])
+garcia = wc.create_wrestler(wc.wrestleDictionary["Daniel Garcia"])
+briscoe = wc.create_wrestler(wc.wrestleDictionary["Mark Briscoe"])
+mox = wc.create_wrestler(wc.wrestleDictionary["Jon Moxley"])
+swerve = wc.create_wrestler(wc.wrestleDictionary["Swerve Strickland"])
+rush = wc.create_wrestler(wc.wrestleDictionary["Rush"])
+lethal = wc.create_wrestler(wc.wrestleDictionary["Jay Lethal"])
+white = wc.create_wrestler(wc.wrestleDictionary["Jay White"])
 
 blueLeague = wc.League([elIdolo, danielson, kingston, king, castagnoli, garcia])
 goldLeague = wc.League([briscoe, mox, swerve, rush, lethal, white])

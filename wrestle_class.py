@@ -1,3 +1,7 @@
+"""
+Classes for Wrestlers and Leagues. Also home to the create_wrestler function and wrestleDictionary.
+"""
+
 import csv
 
 class Wrestler:
@@ -37,6 +41,11 @@ the opponents to the tiebreaker function.
         return f"{self.name}"
 
 class League:
+    """
+Keeps track of the wrestlers that are in the league.
+
+Mostly used to keep separate stat blocks and calculate TBPs.
+    """
     def __init__(
             self,
             roster = [
@@ -74,7 +83,7 @@ with open("wrestlers.csv", "r") as wrestlers:
         } for line in csvReader
     }
 
-def createWrestler(guy = dict()):
+def create_wrestler(guy = dict()):
     """
 Pass a wrestler from the CSV dictionary into this function to\n
 automatically populate a Wrestler object with the relevent info!
