@@ -44,14 +44,14 @@ Mathematically-eliminated competitors are marked with strikethrough text.
         while len(guy.name) < 24:
             guy.name += " "
         if guy.losses >= 3:
-            print("\u0336" + "\u0336".join(f"{guy.name}: {guy.points} points ({guy.wins}-{guy.losses}-{guy.draws})"))
+            print("\u0336" + "\u0336".join(f"{guy.name}: {str(guy.points).zfill(2)} points ({guy.wins}-{guy.losses}-{guy.draws})"))
         else:
-            print(f"{guy.name}: {guy.points} points ({guy.wins}-{guy.losses}-{guy.draws})", f"TBPs: {guy.TBP}", sep = "|")
+            print(f"{guy.name}: {str(guy.points).zfill(2)} points ({guy.wins}-{guy.losses}-{guy.draws})", f"TBPs: {guy.TBP}", sep = "|")
     print("\nGold League:")
     for dude in goldLeague.roster:
         while len(dude.name) < 24:
             dude.name += " "
         if dude.losses >= 3:
-            print("\u0336" + "\u0336".join(f"{dude.name}: {dude.points} points ({dude.wins}-{dude.losses}-{dude.draws})"))
+            print("\u0336" + "\u0336".join(f"{dude.name}: {str(dude.points).zfill(2)} points ({dude.wins}-{dude.losses}-{dude.draws})"))
         else:
-            print(f"{dude.name}: {dude.points} points ({dude.wins}-{dude.losses}-{dude.draws})", f"TBPs: {dude.TBP}", sep = "|")
+            print(f"{dude.name}: {str(dude.points).zfill(2)} points ({dude.wins}-{dude.losses}-{dude.draws})", f"TBPs: {dude.TBP}", sep = "|")
