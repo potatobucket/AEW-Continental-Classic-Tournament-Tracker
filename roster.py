@@ -31,6 +31,10 @@ rush.TBP = rush.tieBreaker(goldLeague.roster)
 swerve.TBP = swerve.tieBreaker(goldLeague.roster)
 
 def point_totals():
+    """
+Automatically formats the league participants into neat and tidy stat blocks.\n
+Mathematically-eliminated competitors are marked with strikethrough text.
+    """
     print("Blue League:")
     for guy in blueLeague.roster:
         while len(guy.name) < 24:
