@@ -1,24 +1,24 @@
 """
-Handles generating the wrestlers, leagues and holds the point_totals function.
+Handles generating the competitors, leagues and holds the point_totals function.
 """
 
-import wrestle_class as wc
+import competitor_class as cc
 
-elIdolo = wc.create_wrestler(wc.wrestleDictionary["Andrade el Idolo"])
-danielson = wc.create_wrestler(wc.wrestleDictionary["Bryan Danielson"])
-kingston = wc.create_wrestler(wc.wrestleDictionary["Eddie Kingston"])
-king = wc.create_wrestler(wc.wrestleDictionary["Brody King"])
-castagnoli = wc.create_wrestler(wc.wrestleDictionary["Claudio Castagnoli"])
-garcia = wc.create_wrestler(wc.wrestleDictionary["Daniel Garcia"])
-briscoe = wc.create_wrestler(wc.wrestleDictionary["Mark Briscoe"])
-mox = wc.create_wrestler(wc.wrestleDictionary["Jon Moxley"])
-swerve = wc.create_wrestler(wc.wrestleDictionary["Swerve Strickland"])
-rush = wc.create_wrestler(wc.wrestleDictionary["Rush"])
-lethal = wc.create_wrestler(wc.wrestleDictionary["Jay Lethal"])
-white = wc.create_wrestler(wc.wrestleDictionary["Jay White"])
+elIdolo = cc.create_competitor(cc.competitorDictionary["Andrade el Idolo"])
+danielson = cc.create_competitor(cc.competitorDictionary["Bryan Danielson"])
+kingston = cc.create_competitor(cc.competitorDictionary["Eddie Kingston"])
+king = cc.create_competitor(cc.competitorDictionary["Brody King"])
+castagnoli = cc.create_competitor(cc.competitorDictionary["Claudio Castagnoli"])
+garcia = cc.create_competitor(cc.competitorDictionary["Daniel Garcia"])
+briscoe = cc.create_competitor(cc.competitorDictionary["Mark Briscoe"])
+mox = cc.create_competitor(cc.competitorDictionary["Jon Moxley"])
+swerve = cc.create_competitor(cc.competitorDictionary["Swerve Strickland"])
+rush = cc.create_competitor(cc.competitorDictionary["Rush"])
+lethal = cc.create_competitor(cc.competitorDictionary["Jay Lethal"])
+white = cc.create_competitor(cc.competitorDictionary["Jay White"])
 
-blueLeague = wc.League([elIdolo, danielson, kingston, king, castagnoli, garcia])
-goldLeague = wc.League([briscoe, mox, swerve, rush, lethal, white])
+blueLeague = cc.League([elIdolo, danielson, kingston, king, castagnoli, garcia])
+goldLeague = cc.League([briscoe, mox, swerve, rush, lethal, white])
 
 elIdolo.TBP = elIdolo.tieBreaker(blueLeague.roster)
 king.TBP = king.tieBreaker(blueLeague.roster)
