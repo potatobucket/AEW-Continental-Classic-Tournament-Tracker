@@ -17,8 +17,8 @@ rush = cc.create_competitor(cc.competitorDictionary["Rush"])
 lethal = cc.create_competitor(cc.competitorDictionary["Jay Lethal"])
 white = cc.create_competitor(cc.competitorDictionary["Jay White"])
 
-blueLeague = cc.League([elIdolo, danielson, kingston, king, castagnoli, garcia])
-goldLeague = cc.League([briscoe, mox, swerve, rush, lethal, white])
+blueLeague = cc.League("blue", [elIdolo, danielson, kingston, king, castagnoli, garcia])
+goldLeague = cc.League("gold", [briscoe, mox, swerve, rush, lethal, white])
 
 elIdolo.TBP = elIdolo.tieBreaker(blueLeague.roster)
 king.TBP = king.tieBreaker(blueLeague.roster)
@@ -34,24 +34,18 @@ briscoe.TBP = briscoe.tieBreaker(goldLeague.roster)
 rush.TBP = rush.tieBreaker(goldLeague.roster)
 swerve.TBP = swerve.tieBreaker(goldLeague.roster)
 
-def point_totals():
+def point_totals(*leagues):
     """
 Automatically formats the league participants into neat and tidy stat blocks.\n
 Mathematically-eliminated competitors are marked with strikethrough text.
     """
-    print("Blue League:")
-    for guy in blueLeague.roster:
-        while len(guy.name) < 24:
-            guy.name += " "
-        if guy.losses >= 3:
-            print("\u0336" + "\u0336".join(f"{guy.name}: {str(guy.points).zfill(2)} points ({guy.wins}-{guy.losses}-{guy.draws})"))
-        else:
-            print(f"{guy.name}: {str(guy.points).zfill(2)} points ({guy.wins}-{guy.losses}-{guy.draws})", f"TBPs: {guy.TBP}", sep = "|")
-    print("\nGold League:")
-    for dude in goldLeague.roster:
-        while len(dude.name) < 24:
-            dude.name += " "
-        if dude.losses >= 3:
-            print("\u0336" + "\u0336".join(f"{dude.name}: {str(dude.points).zfill(2)} points ({dude.wins}-{dude.losses}-{dude.draws})"))
-        else:
-            print(f"{dude.name}: {str(dude.points).zfill(2)} points ({dude.wins}-{dude.losses}-{dude.draws})", f"TBPs: {dude.TBP}", sep = "|")
+    for league in leagues:
+        print(f"{league.name.title()} League:")
+        for guy in league.roster:
+            while len(guy.name) < 24:
+                guy.name += " "
+            if guy.losses >= 3:
+                print("\u0336" + "\u0336".join(f"{guy.name}: {str(guy.points).zfill(2)} points ({guy.wins}-{guy.losses}-{guy.draws})"))
+            else:
+                print(f"{guy.name}: {str(guy.points).zfill(2)} points ({guy.wins}-{guy.losses}-{guy.draws})", f"TBPs: {guy.TBP}", sep = "|")
+        print()

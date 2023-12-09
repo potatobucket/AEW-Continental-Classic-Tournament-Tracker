@@ -48,6 +48,7 @@ Mostly used to keep separate stat blocks and calculate TBPs.
     """
     def __init__(
             self,
+            name = "Fake",
             roster = [
                 Competitor("Jim Jimerson"),
                 Competitor("James Jamerson"),
@@ -59,6 +60,7 @@ Mostly used to keep separate stat blocks and calculate TBPs.
         ):
         self.roster = sorted(roster)
         self.matchList = []
+        self.name = name
 
     @property
     def matches(self):
@@ -70,8 +72,8 @@ Mostly used to keep separate stat blocks and calculate TBPs.
         ]
         return self.matchList
 
-with open("wrestlers.csv", "r") as wrestlers:
-    csvReader = csv.DictReader(wrestlers)
+with open("wrestlers.csv", "r") as competitors:
+    csvReader = csv.DictReader(competitors)
 
     competitorDictionary = {
         line["wrestler"] : {
