@@ -71,6 +71,9 @@ Mostly used to keep separate stat blocks and calculate TBPs.
             (leftOpponent, rightOpponent) for leftOpponent in self.roster for rightOpponent in self.roster if leftOpponent != rightOpponent and (rightOpponent, leftOpponent) not in self.matchList
         ]
         return self.matchList
+    
+    def __lt__(self, other):
+        return self.name < other.name
 
 with open("wrestlers.csv", "r") as competitors:
     csvReader = csv.DictReader(competitors)
