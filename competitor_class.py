@@ -75,12 +75,12 @@ Mostly used to keep separate stat blocks and calculate TBPs.
     def __lt__(self, other):
         return self.name < other.name
 
-with open("wrestlers.csv", "r") as competitors:
+with open("competitors.csv", "r") as competitors:
     csvReader = csv.DictReader(competitors)
 
     competitorDictionary = {
-        line["wrestler"] : {
-            "name" : line["wrestler"],
+        line["name"] : {
+            "name" : line["name"],
             "points" : line["points"],
             "wins" : line["wins"],
             "losses" : line["losses"],
